@@ -57,7 +57,10 @@ Refactored: January 2019
   (<span class="inlinecode"><a class="idref" href="UniMath.Partiality.PCF.html#soundness"><span class="id" title="lemma">soundness</span></a></span>)
 
 </li>
-<li> Adequacy (<span class="inlinecode"><a class="idref" href="UniMath.Partiality.PCF.html#adequacy"><span class="id" title="lemma">adequacy</span></a></span>)
+<li> Computational adequacy (<span class="inlinecode"><a class="idref" href="UniMath.Partiality.PCF.html#adequacy"><span class="id" title="lemma">adequacy</span></a></span>)
+
+</li>
+<li> Characterising PCF propositions (<span class="inlinecode"><a class="idref" href="UniMath.Partiality.PCF.html#pcf_propositions"><span class="id" title="section">pcf_propositions</span></a></span>)
 
 </li>
 </ul>
@@ -582,7 +585,7 @@ Refactored: January 2019
 </div>
 
 <div class="doc">
-<a name="lab2260"></a><h1 class="section">Adequacy</h1>
+<a name="lab2260"></a><h1 class="section">Computational adequacy</h1>
 
 </div>
 <div class="code">
@@ -794,6 +797,80 @@ Refactored: January 2019
 
 <br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="UniMath.Partiality.PCF.html#adequacy"><span class="id" title="section">adequacy</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab2261"></a><h1 class="section">Characterising PCF propositions</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Section</span> <a name="pcf_propositions"><span class="id" title="section">pcf_propositions</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <a name="char_pcf_propositions"><span class="id" title="definition">char_pcf_propositions</span></a> (<span class="id" title="var">t</span> : <a class="idref" href="UniMath.Partiality.PCF.html#term"><span class="id" title="inductive">term</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#2bc0acd71a7061c67660e613b861fe6c"><span class="id" title="notation">ι</span></a>) :<br/>
+&nbsp;&nbsp;<a class="idref" href="UniMath.Partiality.PartialElements.html#isdefined"><span class="id" title="definition">isdefined</span></a> (<a class="idref" href="UniMath.Partiality.PCF.html#ef7a64f7888150688dacf7ec0da1c0d9"><span class="id" title="notation">⟦</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#t"><span class="id" title="variable">t</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#ef7a64f7888150688dacf7ec0da1c0d9"><span class="id" title="notation">⟧</span></a>) <a class="idref" href="UniMath.Foundations.PartA.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="UniMath.Foundations.Propositions.html#358589ff2ab1a22a86dd456baa1130df"><span class="id" title="notation">∥</span></a> <a class="idref" href="UniMath.Foundations.Preamble.html#645c81d8e8c8df0179dbdec41391c773"><span class="id" title="notation">∑</span></a> <a class="idref" href="UniMath.Foundations.Preamble.html#645c81d8e8c8df0179dbdec41391c773"><span class="id" title="notation">(</span></a><span class="id" title="var">n</span> : <a class="idref" href="UniMath.Foundations.Preamble.html#nat"><span class="id" title="inductive">nat</span></a><a class="idref" href="UniMath.Foundations.Preamble.html#645c81d8e8c8df0179dbdec41391c773"><span class="id" title="notation">),</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#t"><span class="id" title="variable">t</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#7c8d0248d5dcd8d25f49a9afef6760d7"><span class="id" title="notation">▹*</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#numeral"><span class="id" title="definition">numeral</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#n"><span class="id" title="variable">n</span></a> <a class="idref" href="UniMath.Foundations.Propositions.html#358589ff2ab1a22a86dd456baa1130df"><span class="id" title="notation">∥</span></a>.<br/>
+<a class="proof" href="#">Show proof.</a><br/><div class="proof">
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intro</span> <span class="id" title="var">p</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Foundations.Propositions.html#hinhpr"><span class="id" title="definition">hinhpr</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<a class="idref" href="UniMath.Partiality.PartialElements.html#value"><span class="id" title="definition">value</span></a> (<a class="idref" href="UniMath.Partiality.PCF.html#ef7a64f7888150688dacf7ec0da1c0d9"><span class="id" title="notation">⟦</span></a> <span class="id" title="var">t</span> <a class="idref" href="UniMath.Partiality.PCF.html#ef7a64f7888150688dacf7ec0da1c0d9"><span class="id" title="notation">⟧</span></a>) <span class="id" title="var">p</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<a class="idref" href="UniMath.Partiality.PCF.html#adequacy"><span class="id" title="lemma">adequacy</span></a> <span class="id" title="var">t</span> <span class="id" title="var">p</span>).<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Foundations.Propositions.html#factor_through_squash"><span class="id" title="lemma">factor_through_squash</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Partiality.PartialElements.html#isaprop_isdefined"><span class="id" title="lemma">isaprop_isdefined</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">intros</span> [<span class="id" title="var">n</span> <span class="id" title="var">r</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">set</span> (<span class="id" title="var">e1</span> := <a class="idref" href="UniMath.Partiality.PCF.html#soundness"><span class="id" title="lemma">soundness</span></a> <span class="id" title="var">t</span> (<a class="idref" href="UniMath.Partiality.PCF.html#numeral"><span class="id" title="definition">numeral</span></a> <span class="id" title="var">n</span>) <span class="id" title="var">r</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">set</span> (<span class="id" title="var">e2</span> := <a class="idref" href="UniMath.Partiality.PCF.html#denotational_semantics_numerals"><span class="id" title="lemma">denotational_semantics_numerals</span></a> <span class="id" title="var">n</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<a class="idref" href="UniMath.Foundations.PartA.html#transportb"><span class="id" title="definition">transportb</span></a> <a class="idref" href="UniMath.Partiality.PartialElements.html#isdefined"><span class="id" title="definition">isdefined</span></a> (<span class="id" title="var">e1</span> <a class="idref" href="UniMath.Foundations.PartA.html#c08910e202733241c0ff38b25be5a0c9"><span class="id" title="notation">@</span></a> <span class="id" title="var">e2</span>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <a class="idref" href="UniMath.Foundations.Preamble.html#tt"><span class="id" title="constructor">tt</span></a>.<br/>
+</div>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <a name="refltrans_step_smallstep"><span class="id" title="definition">refltrans_step_smallstep</span></a> {σ : <a class="idref" href="UniMath.Partiality.PCF.html#type"><span class="id" title="inductive">type</span></a>} : <a class="idref" href="UniMath.Foundations.Preamble.html#nat"><span class="id" title="inductive">nat</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="UniMath.Foundations.Sets.html#hrel"><span class="id" title="definition">hrel</span></a> (<a class="idref" href="UniMath.Partiality.PCF.html#term"><span class="id" title="inductive">term</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#3122c41ebe889f745cb9bbe1c92165c3"><span class="id" title="variable">σ</span></a>) :=<br/>
+&nbsp;&nbsp;<a class="idref" href="UniMath.MoreFoundations.ClosureOfHrel.html#refltransclos_step_hrel"><span class="id" title="definition">refltransclos_step_hrel</span></a> (<a class="idref" href="UniMath.Partiality.PCF.html#smallstep"><span class="id" title="definition">smallstep</span></a>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <a name="char_pcf_propositions'"><span class="id" title="definition">char_pcf_propositions'</span></a> (<span class="id" title="var">t</span> : <a class="idref" href="UniMath.Partiality.PCF.html#term"><span class="id" title="inductive">term</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#2bc0acd71a7061c67660e613b861fe6c"><span class="id" title="notation">ι</span></a>) :<br/>
+&nbsp;&nbsp;<a class="idref" href="UniMath.Partiality.PartialElements.html#isdefined"><span class="id" title="definition">isdefined</span></a> (<a class="idref" href="UniMath.Partiality.PCF.html#ef7a64f7888150688dacf7ec0da1c0d9"><span class="id" title="notation">⟦</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#t"><span class="id" title="variable">t</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#ef7a64f7888150688dacf7ec0da1c0d9"><span class="id" title="notation">⟧</span></a>) <a class="idref" href="UniMath.Foundations.PartA.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">&lt;-&gt;</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">∃</span></a> <a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">(</span></a><span class="id" title="var">n</span> : <a class="idref" href="UniMath.Foundations.Preamble.html#nat"><span class="id" title="inductive">nat</span></a><a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">),</span></a> <a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">∃</span></a> <a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">(</span></a><span class="id" title="var">k</span> : <a class="idref" href="UniMath.Foundations.Preamble.html#nat"><span class="id" title="inductive">nat</span></a><a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">),</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#refltrans_step_smallstep"><span class="id" title="definition">refltrans_step_smallstep</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#k"><span class="id" title="variable">k</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#t"><span class="id" title="variable">t</span></a> (<a class="idref" href="UniMath.Partiality.PCF.html#numeral"><span class="id" title="definition">numeral</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#n"><span class="id" title="variable">n</span></a>).<br/>
+<a class="proof" href="#">Show proof.</a><br/><div class="proof">
+&nbsp;&nbsp;<span class="id" title="tactic">set</span> (<span class="id" title="var">rhs</span> := <a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">∃</span></a> <a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">(</span></a><span class="id" title="var">n</span> : <a class="idref" href="UniMath.Foundations.Preamble.html#nat"><span class="id" title="inductive">nat</span></a><a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">),</span></a> <a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">∃</span></a> <a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">(</span></a><span class="id" title="var">k</span> : <a class="idref" href="UniMath.Foundations.Preamble.html#nat"><span class="id" title="inductive">nat</span></a><a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">),</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#refltrans_step_smallstep"><span class="id" title="definition">refltrans_step_smallstep</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#k"><span class="id" title="variable">k</span></a> <span class="id" title="var">t</span> (<a class="idref" href="UniMath.Partiality.PCF.html#numeral"><span class="id" title="definition">numeral</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#n"><span class="id" title="variable">n</span></a>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">set</span> (<span class="id" title="var">lhs</span> := <a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">∃</span></a> <a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">(</span></a><span class="id" title="var">n</span> : <a class="idref" href="UniMath.Foundations.Preamble.html#nat"><span class="id" title="inductive">nat</span></a><a class="idref" href="UniMath.Foundations.Propositions.html#ad7a1d6b8b93b9a73a2783f3979de807"><span class="id" title="notation">),</span></a> <span class="id" title="var">t</span> <a class="idref" href="UniMath.Partiality.PCF.html#7c8d0248d5dcd8d25f49a9afef6760d7"><span class="id" title="notation">▹*</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#numeral"><span class="id" title="definition">numeral</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#n"><span class="id" title="variable">n</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">set</span> (<span class="id" title="var">lem1</span> := <a class="idref" href="UniMath.MoreFoundations.ClosureOfHrel.html#stepleftequiv_hrel"><span class="id" title="definition">stepleftequiv_hrel</span></a> (@<a class="idref" href="UniMath.Partiality.PCF.html#smallstep"><span class="id" title="definition">smallstep</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#2bc0acd71a7061c67660e613b861fe6c"><span class="id" title="notation">ι</span></a>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">set</span> (<span class="id" title="var">lem2</span> := <a class="idref" href="UniMath.MoreFoundations.ClosureOfHrel.html#left_regular_equiv"><span class="id" title="definition">left_regular_equiv</span></a> (@<a class="idref" href="UniMath.Partiality.PCF.html#smallstep"><span class="id" title="definition">smallstep</span></a> <a class="idref" href="UniMath.Partiality.PCF.html#2bc0acd71a7061c67660e613b861fe6c"><span class="id" title="notation">ι</span></a>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">helper</span> : <span class="id" title="var">lhs</span> <a class="idref" href="UniMath.Foundations.PartA.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">&lt;-&gt;</span></a> <span class="id" title="var">rhs</span>).<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Foundations.Propositions.html#hinhfun"><span class="id" title="definition">hinhfun</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span> [<span class="id" title="var">n</span> <span class="id" title="var">r</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">lem1</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="UniMath.Foundations.Propositions.html#hinhfun"><span class="id" title="definition">hinhfun</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">apply</span> <span class="id" title="var">lem2</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">exact</span> <span class="id" title="var">r</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Foundations.Propositions.html#hinhfun"><span class="id" title="definition">hinhfun</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span> [<span class="id" title="var">n</span> <span class="id" title="var">r</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="UniMath.Foundations.Propositions.html#hinhfun"><span class="id" title="definition">hinhfun</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">apply</span> <span class="id" title="var">lem2</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">apply</span> <span class="id" title="var">lem1</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">r</span>.<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intro</span> <span class="id" title="var">d</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">helper</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Partiality.PCF.html#char_pcf_propositions"><span class="id" title="definition">char_pcf_propositions</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">d</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intro</span> <span class="id" title="var">h</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Partiality.PCF.html#char_pcf_propositions"><span class="id" title="definition">char_pcf_propositions</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">helper</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">h</span>.<br/>
+</div>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="UniMath.Partiality.PCF.html#pcf_propositions"><span class="id" title="section">pcf_propositions</span></a>.<br/>
 </div>
 </div>
 
