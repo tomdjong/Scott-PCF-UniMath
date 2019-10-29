@@ -44,7 +44,7 @@ Adapted from
 <a name="lab325"></a><h2 class="section">Contents</h2>
 
 <ul class="doclist">
-<li> Some lemmas on decidable (equality of) types (<span class="inlinecode"><a class="idref" href="UniMath.MoreFoundations.Wtypes.html#decidable"><span class="id" title="section">decidable</span></a></span>)
+<li> A lemma on decidable (equality of) types (<span class="inlinecode"><a class="idref" href="UniMath.MoreFoundations.Wtypes.html#decidable"><span class="id" title="section">decidable</span></a></span>)
 
 </li>
 <li> Definition of and lemmas on Pi-compact types (<span class="inlinecode"><a class="idref" href="UniMath.MoreFoundations.Wtypes.html#picompact"><span class="id" title="definition">picompact</span></a></span>)
@@ -66,7 +66,7 @@ Adapted from
 </div>
 
 <div class="doc">
-<a name="lab326"></a><h1 class="section">Some lemmas on decidable (equality of) types</h1>
+<a name="lab326"></a><h1 class="section">A lemma on decidable (equality of) types</h1>
 
 </div>
 <div class="code">
@@ -81,23 +81,6 @@ Adapted from
 &nbsp;&nbsp;- <span class="id" title="tactic">exact</span> (<a class="idref" href="UniMath.Foundations.Preamble.html#inl"><span class="id" title="abbreviation">inl</span></a> (<a class="idref" href="UniMath.Foundations.Preamble.html#pr1"><span class="id" title="projection">pr1</span></a> <span class="id" title="var">f</span> <span class="id" title="var">x</span>)).<br/>
 &nbsp;&nbsp;- <span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Foundations.Preamble.html#inr"><span class="id" title="abbreviation">inr</span></a>. <span class="id" title="tactic">intro</span> <span class="id" title="var">y</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">nX</span>. <span class="id" title="tactic">exact</span> (<a class="idref" href="UniMath.Foundations.Preamble.html#pr2"><span class="id" title="projection">pr2</span></a> <span class="id" title="var">f</span> <span class="id" title="var">y</span>).<br/>
-</div>
-
-<br/>
-<span class="id" title="keyword">Definition</span> <a name="isdeceq_retract"><span class="id" title="definition">isdeceq_retract</span></a> {<span class="id" title="var">X</span> <span class="id" title="var">Y</span> : <a class="idref" href="UniMath.Foundations.Preamble.html#UU"><span class="id" title="definition">UU</span></a>} (<span class="id" title="var">s</span> : <a class="idref" href="UniMath.MoreFoundations.Wtypes.html#X"><span class="id" title="variable">X</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="UniMath.MoreFoundations.Wtypes.html#Y"><span class="id" title="variable">Y</span></a>) (<span class="id" title="var">r</span> : <a class="idref" href="UniMath.MoreFoundations.Wtypes.html#Y"><span class="id" title="variable">Y</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="UniMath.MoreFoundations.Wtypes.html#X"><span class="id" title="variable">X</span></a>)<br/>
-&nbsp;&nbsp;(<span class="id" title="var">retract</span> : <a class="idref" href="UniMath.Foundations.Init.html#a0a086f1dd84e2a3eb74369525d648f8"><span class="id" title="notation">∏</span></a> <a class="idref" href="UniMath.Foundations.Init.html#a0a086f1dd84e2a3eb74369525d648f8"><span class="id" title="notation">(</span></a><span class="id" title="var">x</span> : <a class="idref" href="UniMath.MoreFoundations.Wtypes.html#X"><span class="id" title="variable">X</span></a><a class="idref" href="UniMath.Foundations.Init.html#a0a086f1dd84e2a3eb74369525d648f8"><span class="id" title="notation">),</span></a> <a class="idref" href="UniMath.Foundations.Preamble.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">(</span></a><a class="idref" href="UniMath.MoreFoundations.Wtypes.html#r"><span class="id" title="variable">r</span></a> (<a class="idref" href="UniMath.MoreFoundations.Wtypes.html#s"><span class="id" title="variable">s</span></a> <a class="idref" href="UniMath.MoreFoundations.Wtypes.html#x"><span class="id" title="variable">x</span></a>)<a class="idref" href="UniMath.Foundations.Preamble.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">)</span></a> <a class="idref" href="UniMath.Foundations.Preamble.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="UniMath.MoreFoundations.Wtypes.html#x"><span class="id" title="variable">x</span></a>) : <a class="idref" href="UniMath.Foundations.PartB.html#isdeceq"><span class="id" title="definition">isdeceq</span></a> <a class="idref" href="UniMath.MoreFoundations.Wtypes.html#Y"><span class="id" title="variable">Y</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="UniMath.Foundations.PartB.html#isdeceq"><span class="id" title="definition">isdeceq</span></a> <a class="idref" href="UniMath.MoreFoundations.Wtypes.html#X"><span class="id" title="variable">X</span></a>.<br/>
-<a class="proof" href="#">Show proof.</a><br/><div class="proof">
-&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">Ydeceq</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span> <span class="id" title="var">x'</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">induction</span> (<span class="id" title="var">Ydeceq</span> (<span class="id" title="var">s</span> <span class="id" title="var">x</span>) (<span class="id" title="var">s</span> <span class="id" title="var">x'</span>)) <span class="id" title="keyword">as</span> [<span class="id" title="var">Yeq</span> | <span class="id" title="var">nYeq</span>].<br/>
-&nbsp;&nbsp;- <span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Foundations.Preamble.html#inl"><span class="id" title="abbreviation">inl</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">etrans</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">exact</span> (<a class="idref" href="UniMath.Foundations.PartA.html#d799ab163947a6149703915b46efaa7d"><span class="id" title="notation">!</span></a><span class="id" title="var">retract</span> <span class="id" title="var">x</span>).<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">rewrite</span> <span class="id" title="var">Yeq</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<span class="id" title="var">retract</span> <span class="id" title="var">x'</span>).<br/>
-&nbsp;&nbsp;- <span class="id" title="tactic">apply</span> <a class="idref" href="UniMath.Foundations.Preamble.html#inr"><span class="id" title="abbreviation">inr</span></a>. <span class="id" title="tactic">intro</span> <span class="id" title="var">eq</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">nYeq</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<a class="idref" href="UniMath.Foundations.PartA.html#maponpaths"><span class="id" title="definition">maponpaths</span></a> <span class="id" title="var">s</span> <span class="id" title="var">eq</span>).<br/>
 </div>
 
 <br/>
