@@ -1,4 +1,4 @@
-sed 's!<script src="http://code.!<script src="https://code./!g'
+sed 's!<script src="http://code.!<script src="https://code.!g'
 
 sed 's!<a href="http://coq.!<a href="https://coq.!g'
 
