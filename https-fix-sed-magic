@@ -1,5 +1,5 @@
-sed 's!<script src="http://code.!<script src="https://code.!g'
+sed 's!<script src="https://code.!<script src="https://code.!g'
 
-sed 's!<a href="http://coq.!<a href="https://coq.!g'
+sed 's!<a href="https://coq.!<a href="https://coq.!g'
 
 find . -type f -exec sed -i.bak 's/foo/bar/g' {} \;
